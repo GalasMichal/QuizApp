@@ -20,44 +20,47 @@
     ></script>
   </head>
   <body>
-    <nav class="navbar bg-body-tertiary">
-      <div class="container-fluid">
-        <span class="navbar-brand mb-0 h1">QuizApp</span>
-      </div>
-    </nav>
-
     <div class="container">
-      <div class="card" style="width: 18rem">
-        <img src="img/brainbg.jpg" class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">Frage</h5>
-          
-          <div class="card mb-2">
-            <div class="card-body">
-              Antwort
+      <div class="card mb-3 questionCard" style="width: 840px">
+        <div class="row g-0 questionCard">
+          <div class="col-md-4 menu">
+            <div>
+              <img src="img/logo.png" class="img-fluid rounded-start quizappIcon"/>
+            </div>
+            <div class="mb-4 listContainer">
+                <ul class="listMenu">HTML</ul>
+                <ul class="listMenu">CSS</ul>
+                <ul class="listMenu">JS</ul>
+                <ul class="listMenu">JAVA</ul>
+              
             </div>
           </div>
-
-          <div class="card mb-2">
-            <div class="card-body">
-              Antwort
+          <div class="col-md-8 mb-3">
+            <div class="question">
+              <h5 class="card-title">Frage</h5>
             </div>
+              <div class="card">
+                <div class="card-body">
+                  <div class="answerBox">A</div> <p class="answerContainer mb-0"> antwort 1</p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-body">
+                  <div class="answerBox">B</div> <p></p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-body">
+                  <div class="answerBox">C</div> <p></p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-body">
+                  <div class="answerBox">D</div> <p></p>
+                </div>
+              </div>
+            
           </div>
-
-          <div class="card mb-2">
-            <div class="card-body">
-              Antwort
-            </div>
-          </div>
-
-          <div class="card mb-2">
-            <div class="card-body">
-              Antwort
-            </div>
-          </div>
-
-
-          <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
       </div>
     </div>
