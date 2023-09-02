@@ -6,7 +6,7 @@ let questions = [
         'answer_3': 'Bratislava',
         'answer_4': 'Ljubljan',
         'right_answer': 3,
-    }
+    },
 
     {
         'question': 'Wie viele Zähne hat ein erwachsener Mensch normalerweise?',
@@ -15,7 +15,7 @@ let questions = [
         'answer_3': '32',
         'answer_4': '36',
         'right_answer': 3,
-    }
+    },
 
     {
         'question': 'Welches Land ist kein ständiges Mitglied im Sicherheitsrat der Vereinten Nationen?',
@@ -24,7 +24,7 @@ let questions = [
         'answer_3': 'Deutschland',
         'answer_4': 'China',
         'right_answer': 3,
-    }
+    },
 
     {
         'question': 'In welcher Einheit wird der elektrische Widerstand gemessen?',
@@ -33,7 +33,7 @@ let questions = [
         'answer_3': 'Ampere',
         'answer_4': 'Watt',
         'right_answer': 1,
-    }
+    },
 
     {
         'question': 'Wie lautet das chemische Symbol für Blei?',
@@ -42,5 +42,26 @@ let questions = [
         'answer_3': 'Be',
         'answer_4': 'Pt',
         'right_answer': 2,
-    }
+    },
 ]
+
+let currentQuestion = 0;
+
+function init(){
+    counter();
+    question();
+}
+
+function counter(){
+    document.getElementById('current_question').innerHTML = currentQuestion;
+    document.getElementById('all_questions').innerHTML = questions.length;
+}
+
+function question() {
+    let question = questions[currentQuestion];
+    document.getElementById('questions').innerHTML = question['question'];
+    document.getElementById('answer_1').innerHTML = question['answer_1'];
+    document.getElementById('answer_2').innerHTML = question['answer_2'];
+    document.getElementById('answer_3').innerHTML = question['answer_3'];
+    document.getElementById('answer_4').innerHTML = question['answer_4'];
+}

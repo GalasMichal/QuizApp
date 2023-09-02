@@ -19,47 +19,67 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
+  <body onload="init()">
     <div class="container">
       <div class="card mb-3 questionCard" style="width: 840px">
         <div class="row g-0 questionCard">
           <div class="col-md-4 menu">
             <div>
-              <img src="img/logo.png" class="img-fluid rounded-start quizappIcon"/>
+              <img
+                src="img/logo.png"
+                class="img-fluid rounded-start quizappIcon"
+              />
             </div>
             <div class="mb-4 listContainer">
-                <ul class="listMenu">HTML</ul>
-                <ul class="listMenu">CSS</ul>
-                <ul class="listMenu">JS</ul>
-                <ul class="listMenu">JAVA</ul>
-              
+              <ul class="listMenu">
+                HTML
+              </ul>
+              <ul class="listMenu">
+                CSS
+              </ul>
+              <ul class="listMenu">
+                JS
+              </ul>
+              <ul class="listMenu">
+                JAVA
+              </ul>
             </div>
           </div>
           <div class="col-md-8 mb-3">
             <div class="question">
-              <h5 class="card-title">Frage</h5>
+              <h5 class="card-title" id="questions">Frage</h5>
             </div>
-              <div class="card">
-                <div class="card-body">
-                  <div class="answerBox">A</div> <p class="answerContainer mb-0"> antwort 1</p>
-                </div>
+            <div class="card">
+              <div class="card-body">
+                <div class="answerBox">A</div>
+                <p id="answer_1" class="answerContainer mb-0">antwort 1</p>
               </div>
-              <div class="card">
-                <div class="card-body">
-                  <div class="answerBox">B</div> <p></p>
-                </div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <div class="answerBox">B</div>
+                <p id="answer_2" class="answerContainer mb-0"></p>
               </div>
-              <div class="card">
-                <div class="card-body">
-                  <div class="answerBox">C</div> <p></p>
-                </div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <div class="answerBox">C</div>
+                <p id="answer_3" class="answerContainer mb-0"></p>
               </div>
-              <div class="card">
-                <div class="card-body">
-                  <div class="answerBox">D</div> <p></p>
-                </div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <div class="answerBox">D</div>
+                <p id="answer_4" class="answerContainer mb-0"></p>
               </div>
-            
+            </div>
+            <div class="progress_menu">
+              <img class="navIcon" src="img/linke-pfeil.png" alt="" /> Frage
+              <p class="progress_menu_p" id="current_question">1</p>
+              von
+              <p class="progress_menu_p" id="all_questions">All</p>
+              <img class="navIcon" src="img/rechter-pfeil.png" alt="" />
+            </div>
           </div>
         </div>
       </div>
