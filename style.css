@@ -118,3 +118,17 @@ body {
 .d-none{
     display: none !important;
 }
+
+.endCardImg {
+    width: 100px;
+}
+.endcardView {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.CounterBox{
+    display: flex;
+}
