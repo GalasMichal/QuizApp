@@ -94,7 +94,7 @@ function question() {
     }
     else {
 
-        let percent = currentQuestion / questions.length;
+        let percent = (currentQuestion + 1) / questions.length;
         percent = Math.round(percent * 100);
         document.getElementById('progress-bar').innerHTML = `${percent}%`;
         console.log('Fortschritt:', percent);
@@ -129,4 +129,13 @@ function answer(selection) {
         document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
     }
     document.getElementById('next-button').disabled = false;
+}
+
+function resetQuiz() {
+    document.getElementById('QuestionCard').style = '';
+    document.getElementById('EndCard').style = 'display: none';
+    currentQuestion = 0;
+    rightQuestions = 0;
+    init();
+
 }

@@ -111,17 +111,19 @@ body {
     background-color: rgba(0, 0, 0, 0.05);
 }
 
-.bg-success, .bg-danger {
+.bg-success,
+.bg-danger {
     color: white !important;
 }
 
-.d-none{
+.d-none {
     display: none !important;
 }
 
 .endCardImg {
     width: 100px;
 }
+
 .endcardView {
     display: flex;
     justify-content: center;
@@ -129,11 +131,17 @@ body {
     flex-direction: column;
 }
 
-.CounterBox{
+.CounterBox {
     display: flex;
     gap: 5px;
 }
 
 .width-100 {
     width: 100%;
+}
+
+.endButton {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
 }
