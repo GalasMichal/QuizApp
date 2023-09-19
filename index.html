@@ -38,11 +38,11 @@
             </ul>
           </div>
         </div>
-        <div id="QuizContent" class="col-md-8 mb-3">
+        <div id="QuizContent" class="col-md-8 mb-0">
           <div id="EndCard" class="card-body" style="display: none;">
             <div class="endcardView"><img class="endCardImg" src="img/brain result.png">
             <h2>Quiz beendet</h2>
-            <div class="CounterBox">Dein Progress <p>5</p>von <p></p></div>
+            <div class="CounterBox">Dein Progress <p id="AmountOfCorrectQuestions"> 5 </p> von <p id="EndScreenCounterAll"></p></div>
           </div>
           </div>
           <div id="QuestionCard" class="mb-3 col-md-8">
@@ -72,6 +72,9 @@
                 <div class="answerBox">D</div>
                 <p id="answer_4" class="answerContainer mb-0"></p>
               </div>
+            </div>
+            <div class="progress width-100" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-bar" id="progress-bar" style="width: 0%">0%</div>
             </div>
             <div class="progress_menu">
               <button onclick="previous_question()"><img class="navIcon" src="img/linke-pfeil.png" alt=""

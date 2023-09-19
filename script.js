@@ -46,6 +46,7 @@ let questions = [
 ]
 
 let currentQuestion = 0;
+let rightQuestions = 0;
 
 function init() {
     counter();
@@ -82,6 +83,8 @@ function counter() {
 
     document.getElementById('current_question').innerHTML = currentQuestion + 1;
     document.getElementById('all_questions').innerHTML = questions.length;
+    document.getElementById('EndScreenCounterAll').innerHTML = questions.length;
+    document.getElementById('AmountOfCorrectQuestions').innerHTML = rightQuestions;
 }
 
 function question() {
@@ -90,6 +93,13 @@ function question() {
         document.getElementById('EndCard').style = '';
     }
     else {
+
+        let percent = currentQuestion / questions.length;
+        percent = Math.round(percent * 100);
+        document.getElementById('progress-bar').innerHTML = `${percent}%`;
+        console.log('Fortschritt:', percent);
+        document.getElementById('progress-bar').style = `width: ${percent}%`;
+
         let question = questions[currentQuestion];
         document.getElementById('questions').innerHTML = question['question'];
         document.getElementById('answer_1').innerHTML = question['answer_1'];
@@ -112,6 +122,7 @@ function answer(selection) {
     if (selectedQuestionNumber == question['right_answer']) {
         console.log('richtige Antwort');
         document.getElementById(selection).parentNode.classList.add('bg-success');
+        rightQuestions++;
     } else {
         console.log('Falsche Antwort');
         document.getElementById(selection).parentNode.classList.add('bg-danger');

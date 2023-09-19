@@ -131,4 +131,9 @@ body {
 
 .CounterBox{
     display: flex;
+    gap: 5px;
+}
+
+.width-100 {
+    width: 100%;
 }
