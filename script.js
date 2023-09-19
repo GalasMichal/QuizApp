@@ -47,6 +47,8 @@ let questions = [
 
 let currentQuestion = 0;
 let rightQuestions = 0;
+let Audio_Succes = new Audio('audio/success.mp3') ;
+let Audio_Fail = new Audio('audio/fail.mp3');
 
 function init() {
     counter();
@@ -122,11 +124,13 @@ function answer(selection) {
     if (selectedQuestionNumber == question['right_answer']) {
         console.log('richtige Antwort');
         document.getElementById(selection).parentNode.classList.add('bg-success');
+        Audio_Succes.play();
         rightQuestions++;
     } else {
         console.log('Falsche Antwort');
         document.getElementById(selection).parentNode.classList.add('bg-danger');
         document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
+        Audio_Fail.play();
     }
     document.getElementById('next-button').disabled = false;
 }
