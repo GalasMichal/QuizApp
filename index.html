@@ -1,99 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <!-- Bootstrap file -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="script.js"></script>
-  <!-- Bootstrap file -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-    crossorigin="anonymous"></script>
-</head>
-
-<body onload="init()">
-  <div class="container">
-    <div class="card mb-3 questionCard" style="width: 840px">
-      <div class="row g-0 questionCard">
-        <div class="col-md-4 menu">
-          <div>
-            <img src="img/logo.png" class="img-fluid rounded-start quizappIcon" />
-          </div>
-          <div class="mb-4 listContainer">
-            <ul class="listMenu">
-              HTML
-            </ul>
-            <ul class="listMenu">
-              CSS
-            </ul>
-            <ul class="listMenu">
-              JS
-            </ul>
-            <ul class="listMenu">
-              JAVA
-            </ul>
-          </div>
-        </div>
-        <div id="QuizContent" class="col-md-8 mb-0">
-          <div id="EndCard" class="card-body" style="display: none;">
-            <div class="endcardView"><img class="endCardImg" src="img/brain result.png">
-            <h2>Quiz beendet</h2>
-            <div class="CounterBox">Dein Progress <p id="AmountOfCorrectQuestions"> 5 </p> von <p id="EndScreenCounterAll"></p></div>
-            <div class="endButton">
-              <button type="button" onclick="resetQuiz()" class="btn btn-primary">Erneut starten</button>
-            </div>  
-          </div>
-          </div>
-          <div id="QuestionCard" class="mb-3 col-md-8">
-            <div class="question">
-              <h5 class="card-title" id="questions">Frage</h5>
+  <body onload="init()">
+    <div class="container">
+      <div class="card mb-3 questionCard" style="width: 840px">
+        <div class="row g-0 questionCard">
+          <div class="col-md-4 menu">
+            <div>
+              <img
+                src="img/logo.png"
+                class="img-fluid rounded-start quizappIcon"
+              />
             </div>
-            <div class="card quiz-answer-card" onclick="answer('answer_1')">
-              <div class="card-body">
-                <div class="answerBox">A</div>
-                <p id="answer_1" class="answerContainer mb-0">antwort 1</p>
+            <div class="mb-4 listContainer">
+              <ul class="listMenu" onclick="resetQuiz()">
+                Allgemeinwissen
+              </ul>
+              <ul class="listMenu">
+                Natur
+              </ul>
+              <ul class="listMenu">
+                Wissenschaft
+              </ul>
+              <ul class="listMenu">
+                Technik
+              </ul>
+            </div>
+          </div>
+          <div id="QuizContent" class="col-md-8 mb-0">
+            <div id="IntroCard" class="IntroCard width-100">
+              <h1>Willkommen in der Quizapp</h1>
+              <h2>Bereit für die erste Frage ?</h2>
+              <button type="button" class="btn btn-info" onclick="StartQuiz()">
+                Beginnen
+              </button>
+            </div>
+            <div id="EndCard" class="card-body" style="display: none">
+              <div class="endcardView">
+                <img class="endCardImg" src="img/brain result.png" />
+                <h2>Quiz beendet</h2>
+                <div class="CounterBox">
+                  Du hast
+                  <p id="AmountOfCorrectQuestions">5</p>
+                  von
+                  <p id="EndScreenCounterAll"></p>
+                  Fragen richtig beantwortet
+                </div>
+                <div class="endButton">
+                  <button
+                    type="button"
+                    onclick="resetQuiz()"
+                    class="btn btn-primary"
+                  >
+                    Erneut starten
+                  </button>
+                </div>
               </div>
             </div>
-            <div class="card quiz-answer-card" onclick="answer('answer_2')">
-              <div class="card-body">
-                <div class="answerBox">B</div>
-                <p id="answer_2" class="answerContainer mb-0"></p>
+            <div id="QuestionCard" class="mb-3 col-md-8" style="display: none">
+              <div class="question">
+                <h5 class="card-title" id="questions">Frage</h5>
               </div>
-            </div>
-            <div class="card quiz-answer-card" onclick="answer('answer_3')">
-              <div class="card-body">
-                <div class="answerBox">C</div>
-                <p id="answer_3" class="answerContainer mb-0"></p>
+              <div class="card quiz-answer-card" onclick="answer('answer_1')">
+                <div class="card-body">
+                  <div class="answerBox">A</div>
+                  <p id="answer_1" class="answerContainer mb-0">antwort 1</p>
+                </div>
               </div>
-            </div>
-            <div class="card quiz-answer-card" onclick="answer('answer_4')">
-              <div class="card-body">
-                <div class="answerBox">D</div>
-                <p id="answer_4" class="answerContainer mb-0"></p>
+              <div class="card quiz-answer-card" onclick="answer('answer_2')">
+                <div class="card-body">
+                  <div class="answerBox">B</div>
+                  <p id="answer_2" class="answerContainer mb-0"></p>
+                </div>
               </div>
-            </div>
-            <div class="progress width-100" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-              <div class="progress-bar" id="progress-bar" style="width: 20%">20%</div>
-            </div>
-            <div class="progress_menu">
-              <button onclick="previous_question()"><img class="navIcon" src="img/linke-pfeil.png" alt=""
-                  srcset=""></button>
-              Frage
-              <p class="progress_menu_p" id="current_question">1</p>
-              von
-              <p class="progress_menu_p" id="all_questions">All</p>
-              <button id="next-button" onclick="nextQuestion()" disabled><img class="navIcon"
-                  src="img/rechter-pfeil.png" alt="" srcset=""></button>
+              <div class="card quiz-answer-card" onclick="answer('answer_3')">
+                <div class="card-body">
+                  <div class="answerBox">C</div>
+                  <p id="answer_3" class="answerContainer mb-0"></p>
+                </div>
+              </div>
+              <div class="card quiz-answer-card" onclick="answer('answer_4')">
+                <div class="card-body">
+                  <div class="answerBox">D</div>
+                  <p id="answer_4" class="answerContainer mb-0"></p>
+                </div>
+              </div>
+              <div
+                class="progress width-100"
+                role="progressbar"
+                aria-label="Example with label"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <div class="progress-bar" id="progress-bar" style="width: 20%">
+                  20%
+                </div>
+              </div>
+              <div class="progress_menu">
+                <button onclick="previous_question()">
+                  <img
+                    class="navIcon"
+                    src="img/linke-pfeil.png"
+                    alt=""
+                    srcset=""
+                  />
+                </button>
+                Frage
+                <p class="progress_menu_p" id="current_question">1</p>
+                von
+                <p class="progress_menu_p" id="all_questions">All</p>
+                <button id="next-button" onclick="nextQuestion()" disabled>
+                  <img
+                    class="navIcon"
+                    src="img/rechter-pfeil.png"
+                    alt=""
+                    srcset=""
+                  />
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</body>
-
+  </body>
 </html>
